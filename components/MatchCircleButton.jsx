@@ -1,13 +1,13 @@
 import { View, Pressable, StyleSheet } from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { AntDesign } from '@expo/vector-icons';
 
-export default function MatchCircleButton() {
+
+export default function MatchCircleButton({icon}) {
   return (
-    <View style={styles.circleButtonContainer}>
-      <Pressable style={styles.circleButton}>
-        <MaterialIcons name="add" size={38} color="#25292e" />
-      </Pressable>
-    </View>
+    <Pressable style={styles.circleButton}>
+      <AntDesign name={icon} size={24} color="black" />
+    </Pressable>
   );
 }
 
@@ -22,10 +22,14 @@ const styles = StyleSheet.create({
     padding: 3,
   },
   circleButton: {
-    flex: 1,
+    width: 60,
+    height: 60,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 42,
+    borderRadius: 30,
     backgroundColor: '#fff',
+    borderColor: "gray",
+    borderWidth: 2,
+    marginHorizontal: 10
   },
 });

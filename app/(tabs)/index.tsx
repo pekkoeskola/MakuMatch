@@ -1,17 +1,50 @@
 import { StyleSheet } from 'react-native';
+import { useState } from 'react';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 
-import MatchRecipeCard from '../../components/MatchRecipeCard';
+import Animated, { useAnimatedProps, useSharedValue} from 'react-native-reanimated';
+
+import MatchRecipeCardAnimated from '../../components/MatchRecipeCard';
 import MatchCircleButton from '@/components/MatchCircleButton'
+import MatchButtons from '@/components/MatchButtons'
 
 
 export default function TabOneScreen() {
 
+  const recipes = [
+    {
+      title: "Pestopasta",
+      imagePath: require("../../assets/images/pestopasta.jpg")
+    },
+    {
+      title: "Papupaistos",
+      imagePath: require("../../assets/images/Papupaistos.jpg")
+    }
+  ]
+
+  const [currentRecipe, setCurrentRecipe] = useState(recipes[0])
+
+  //const currentRecipe = useSharedValue(recipes[0])
+
+  const switchRecipe = ()  => {
+    if(currentRecipe.title === "Pestopasta"){
+      setCurrentRecipe(recipes[1])
+    }
+    else{
+      setCurrentRecipe(recipes[0])
+    }
+  }
+
+  const onNextRecipe = async () => {
+    switchRecipe()
+  }
+
   return (
     <View style={[styles.container, {zIndex: -1}]}>
-      <MatchRecipeCard zIndex={0}/>
+      <MatchRecipeCardAnimated currentRecipe={currentRecipe} nextRecipe={onNextRecipe}/>
+      <MatchButtons />
     </View>
   )
 }

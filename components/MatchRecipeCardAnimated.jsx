@@ -3,7 +3,7 @@ import {View, Text, Image, ImageBackground,StyleSheet} from "react-native"
 import { GestureDetector, Gesture } from 'react-native-gesture-handler';
 import Animated, { useAnimatedStyle, useSharedValue} from 'react-native-reanimated';
 
-const MatchRecipeCard = ({currentRecipe, nextRecipe}) => {
+const MatchRecipeCard = React.forwardRef( ({currentRecipe, onNew}, ref) => {
 
   const translateX = useSharedValue(0);
   const translateY = useSharedValue(0);
@@ -67,6 +67,8 @@ const MatchRecipeCard = ({currentRecipe, nextRecipe}) => {
     </GestureDetector>
   )
 }
+)
 
+const MatchRecipeCardAnimated = Animated.createAnimatedComponent(MatchRecipeCard)
 
-export default MatchRecipeCard
+export default MatchRecipeCardAnimated
