@@ -59,9 +59,9 @@ const MatchRecipeCard = ({currentRecipe, nextRecipe}) => {
     <GestureDetector gesture={drag}>
       <Animated.View style={[containerStyle, styles.container]}>
         <ImageBackground source={currentRecipe.imagePath} 
-        style={{width: "100%", height: "100%", flexDirection: "column-reverse"}}
-        imageStyle={styles.image}>
-          <Text style={styles.title} >{currentRecipe.title}</Text>
+          style={{width: "100%", height: "100%", flexDirection: "column-reverse"}}
+          imageStyle={styles.image}>
+            <Text style={styles.title} >{currentRecipe.title}</Text>
         </ImageBackground>
       </Animated.View>
     </GestureDetector>

@@ -10,30 +10,20 @@ import MatchRecipeCardAnimated from '../../components/MatchRecipeCard';
 import MatchCircleButton from '@/components/MatchCircleButton'
 import MatchButtons from '@/components/MatchButtons'
 
+import Recipes from "../../constants/Recipes"
 
 export default function TabOneScreen() {
 
-  const recipes = [
-    {
-      title: "Pestopasta",
-      imagePath: require("../../assets/images/pestopasta.jpg")
-    },
-    {
-      title: "Papupaistos",
-      imagePath: require("../../assets/images/Papupaistos.jpg")
-    }
-  ]
-
-  const [currentRecipe, setCurrentRecipe] = useState(recipes[0])
+  const [currentRecipe, setCurrentRecipe] = useState(Recipes[0])
 
   //const currentRecipe = useSharedValue(recipes[0])
 
   const switchRecipe = ()  => {
     if(currentRecipe.title === "Pestopasta"){
-      setCurrentRecipe(recipes[1])
+      setCurrentRecipe(Recipes[1])
     }
     else{
-      setCurrentRecipe(recipes[0])
+      setCurrentRecipe(Recipes[0])
     }
   }
 
