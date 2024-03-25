@@ -6,7 +6,7 @@ const ListRecipeCard = ({ recipe }) => {
   const imagePath = recipe.imagePath
 
   return(
-    <Link href={`recipedetails/${recipe.id}`} asChild>
+    <Link href={`/recipedetails/${recipe.id}`} asChild>
       <Pressable style={styles.container}>
         <ImageBackground 
           source={imagePath}

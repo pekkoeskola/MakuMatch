@@ -1,14 +1,17 @@
-import { StyleSheet } from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
+import { Link } from "expo-router"
 
 export default function TabThreeScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>My recipes tab</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/two.tsx" />
+      <Link href={"likedrecipes"} asChild>
+        <Pressable style={styles.button}>
+          <Text style={{fontSize: 18}} >Liked recipes</Text>
+        </Pressable>
+      </Link>
     </View>
   );
 }
@@ -17,7 +20,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
   },
   title: {
     fontSize: 20,
@@ -27,5 +29,11 @@ const styles = StyleSheet.create({
     marginVertical: 30,
     height: 1,
     width: '80%',
+  },
+  button: {
+    borderWidth: 2,
+    padding: 5,
+    borderColor: "gray",
+    borderRadius: 10
   },
 });
