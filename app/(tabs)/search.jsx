@@ -6,8 +6,7 @@ import ListRecipeCard from '../../components/ListRecipeCard';
 import Recipes from "../../constants/Recipes"
 
 export default function TabTwoScreen() {
-
-
+  
   return (
     <View style={styles.container}>
       <FlatList

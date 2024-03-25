@@ -1,4 +1,5 @@
-import {View, Text, ImageBackground, Image,  StyleSheet} from "react-native"
+import { View, Text, ImageBackground, Image,  StyleSheet, Pressable } from "react-native"
+import { Link } from "expo-router"
 
 const ListRecipeCard = ({ recipe }) => {
 
@@ -7,14 +8,16 @@ const ListRecipeCard = ({ recipe }) => {
   //console.log(recipe)
 
   return(
-    <View style={styles.container}>
-      <ImageBackground 
-        source={imagePath}
-        style={{width: "100%", height: 100, flexDirection: "column-reverse"}}
-        imageStyle={styles.image}>
-         <Text style={styles.title}>{recipe.title}</Text>
-      </ImageBackground>
-    </View>
+    <Link href={`recipedetails/${recipe.title}`} asChild>
+      <Pressable style={styles.container}>
+        <ImageBackground 
+          source={imagePath}
+          style={{width: "100%", height: 100, flexDirection: "column-reverse"}}
+          imageStyle={styles.image}>
+            <Text style={styles.title}>{recipe.title}</Text>
+        </ImageBackground>
+      </Pressable>
+    </Link>
   )
 }
 
