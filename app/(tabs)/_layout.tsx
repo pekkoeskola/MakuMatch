@@ -6,6 +6,7 @@ import { Pressable } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
+import { Ionicons } from '@expo/vector-icons';
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
@@ -46,11 +47,11 @@ export default function TabLayout() {
           title: 'My Recipes',
           tabBarIcon: ({ color }) => <TabBarIcon name="book" color={color} />,
           headerRight: () => (
-            <Link href="/modal" asChild>
+            <Link href="/profile" asChild>
               <Pressable>
                 {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
+                  <Ionicons
+                    name="person-circle"
                     size={25}
                     color={Colors[colorScheme ?? 'light'].text}
                     style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
