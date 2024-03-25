@@ -1,12 +1,11 @@
 import React from "react"
 
 import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet } from 'react-native';
+import { Platform, StyleSheet, Image, View, Text } from 'react-native';
 
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+import Recipes from "../../constants/Recipes"
 
 export default function RecipeDetailsScreen() {
 
@@ -14,14 +13,18 @@ export default function RecipeDetailsScreen() {
 
   const navigation = useNavigation();
 
+  const recipeDetails = Recipes.find(r => r.id === Number(recipe))
+
+  const imagePath = recipeDetails.imagePath
+
   React.useEffect(() => {
-    navigation.setOptions({ title: recipe });
+    navigation.setOptions({ title: recipeDetails.title });
   }, [navigation]);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{recipe}</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+      <Image source={imagePath} style={styles.image}/>
+      <Text style={styles.title}>{recipeDetails.title}</Text>
 
       {/* Use a light status bar on iOS to account for the black space above the modal */}
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
@@ -43,5 +46,9 @@ const styles = StyleSheet.create({
     marginVertical: 30,
     height: 1,
     width: '80%',
+  },
+  image: {
+    width: "100%",
+    height: 200
   },
 });

@@ -5,10 +5,8 @@ const ListRecipeCard = ({ recipe }) => {
 
   const imagePath = recipe.imagePath
 
-  //console.log(recipe)
-
   return(
-    <Link href={`recipedetails/${recipe.title}`} asChild>
+    <Link href={`recipedetails/${recipe.id}`} asChild>
       <Pressable style={styles.container}>
         <ImageBackground 
           source={imagePath}
