@@ -1,6 +1,6 @@
 import { createContext, useReducer, useContext } from "react"
 
-import { recipesReducer } from "@/reducers/recipesReducer"
+import recipesReducer from "@/reducers/recipesReducer"
 
 import Recipes from "@/constants/Recipes"
 

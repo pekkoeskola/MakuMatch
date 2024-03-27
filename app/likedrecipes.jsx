@@ -20,7 +20,7 @@ export default function ModalScreen() {
         data={likedRecipes}
         renderItem={({item}) => <ListRecipeCard recipe={item} />}
         keyExtractor={item => item.id}
-        numColumns={2}
+        numColumns={1}
       />
 
       {/* Use a light status bar on iOS to account for the black space above the modal */}

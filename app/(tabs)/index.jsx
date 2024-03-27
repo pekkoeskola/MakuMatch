@@ -10,13 +10,13 @@ import MatchButtons from '@/components/MatchButtons'
 
 import Recipes from "../../constants/Recipes"
 
-import { RecipesContext } from '@/contexts/RecipesContext'
+import { useRecipesDispatch } from '@/contexts/RecipesContext'
 
 export default function TabOneScreen() {
 
   const [currentRecipe, setCurrentRecipe] = useState(Recipes[0])
 
-  const likedrecipes = useContext(RecipesContext)
+  const dispatch = useRecipesDispatch()
 
   const nextRecipe = ()  => {
     if(currentRecipe.id === Recipes.length){
@@ -28,14 +28,17 @@ export default function TabOneScreen() {
   }
 
   const onLike = () => {
-
+    dispatch({
+      type: "liked",
+      id: currentRecipe.id
+    })
     nextRecipe()
   }
 
   return (
     <View style={[styles.container, {zIndex: -1}]}>
       <MatchRecipeCard currentRecipe={currentRecipe} nextRecipe={nextRecipe}/>
-      <MatchButtons onLike={nextRecipe} onDislike={nextRecipe} onAdd={nextRecipe} />
+      <MatchButtons onLike={onLike} onDislike={nextRecipe} onAdd={nextRecipe} />
     </View>
   )
 }
