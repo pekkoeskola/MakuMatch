@@ -8,8 +8,7 @@ import { useEffect, useReducer } from 'react';
 import Recipes from "@/constants/Recipes"
 
 //contexts and reducers
-import { RecipesContext, RecipesDispatchContext } from "../contexts/RecipesContext"
-import { recipesReducer } from "../reducers/recipesReducer"
+import { RecipesProvider } from '@/contexts/RecipesContext';
 
 import { useColorScheme } from '@/components/useColorScheme';
 import { GestureDetector, GestureHandlerRootView } from "react-native-gesture-handler";
@@ -54,22 +53,16 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-
-  const [recipes, dispatch] = useReducer(recipesReducer, Recipes)
-
   return (
     <GestureHandlerRootView style={{flex: 1}}>
-      <RecipesContext.Provider value={recipes}>
-        <RecipesDispatchContext.Provider value={dispatch}>
-          <Stack>
+      <RecipesProvider>
+        <Stack>
             <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
             <Stack.Screen name="profile" options={{ presentation: 'modal' }} />
             <Stack.Screen name="recipedetails/[recipe]" options={{ presentation: "modal" }} />
             <Stack.Screen name="likedrecipes" options={{ presentation: "modal" }} />
           </Stack>
-        </RecipesDispatchContext.Provider>
-      </RecipesContext.Provider>
+      </RecipesProvider>
     </GestureHandlerRootView>
-
-  );
+  )
 }

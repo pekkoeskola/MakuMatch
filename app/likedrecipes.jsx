@@ -5,12 +5,12 @@ import { StatusBar } from 'expo-status-bar';
 
 import ListRecipeCard from '@/components/ListRecipeCard'
 
-import { RecipesContext } from "@/contexts/RecipesContext"
+import { useRecipes } from "@/contexts/RecipesContext"
 
 
 export default function ModalScreen() {
 
-  const recipes = useContext(RecipesContext)
+  const recipes = useRecipes()
 
   const likedRecipes = recipes.filter(r => r.liked)
 
