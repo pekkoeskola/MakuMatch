@@ -3,10 +3,13 @@ import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
+import { useEffect, useReducer } from 'react';
 
-//contexts
-import { LikedRecipesContext } from "../contexts/LikedRecipesContext"
+import Recipes from "@/constants/Recipes"
+
+//contexts and reducers
+import { RecipesContext, RecipesDispatchContext } from "../contexts/RecipesContext"
+import { recipesReducer } from "../reducers/recipesReducer"
 
 import { useColorScheme } from '@/components/useColorScheme';
 import { GestureDetector, GestureHandlerRootView } from "react-native-gesture-handler";
@@ -51,18 +54,21 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-  const colorScheme = useColorScheme();
+
+  const [recipes, dispatch] = useReducer(recipesReducer, Recipes)
 
   return (
     <GestureHandlerRootView style={{flex: 1}}>
-      <LikedRecipesContext.Provider value={[]}>
+      <RecipesContext.Provider value={recipes}>
+        <RecipesDispatchContext.Provider value={dispatch}>
           <Stack>
             <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
             <Stack.Screen name="profile" options={{ presentation: 'modal' }} />
             <Stack.Screen name="recipedetails/[recipe]" options={{ presentation: "modal" }} />
             <Stack.Screen name="likedrecipes" options={{ presentation: "modal" }} />
           </Stack>
-      </LikedRecipesContext.Provider>
+        </RecipesDispatchContext.Provider>
+      </RecipesContext.Provider>
     </GestureHandlerRootView>
 
   );

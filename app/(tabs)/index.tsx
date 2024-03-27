@@ -3,19 +3,20 @@ import { useState, useContext } from 'react';
 
 import Animated, { useAnimatedProps, useSharedValue} from 'react-native-reanimated'
 
-import MatchRecipeCardAnimated from '../../components/MatchRecipeCard'
+import MatchRecipeCardAnimated from '../../components/MatchRecipeCardAnimated'
+import MatchRecipeCard from "../../components/MatchRecipeCard"
 import MatchCircleButton from '@/components/MatchCircleButton'
 import MatchButtons from '@/components/MatchButtons'
 
 import Recipes from "../../constants/Recipes"
 
-import { LikedRecipesContext } from '@/contexts/LikedRecipesContext'
+import { RecipesContext } from '@/contexts/RecipesContext'
 
 export default function TabOneScreen() {
 
   const [currentRecipe, setCurrentRecipe] = useState(Recipes[0])
 
-  const likedrecipes = useContext(LikedRecipesContext)
+  const likedrecipes = useContext(RecipesContext)
 
   const nextRecipe = ()  => {
     if(currentRecipe.id === Recipes.length){
@@ -33,7 +34,7 @@ export default function TabOneScreen() {
 
   return (
     <View style={[styles.container, {zIndex: -1}]}>
-      <MatchRecipeCardAnimated currentRecipe={currentRecipe} nextRecipe={nextRecipe}/>
+      <MatchRecipeCard currentRecipe={currentRecipe} nextRecipe={nextRecipe}/>
       <MatchButtons onLike={nextRecipe} onDislike={nextRecipe} onAdd={nextRecipe} />
     </View>
   )
