@@ -5,6 +5,9 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 
+//contexts
+import { LikedRecipesContext } from "../contexts/LikedRecipesContext"
+
 import { useColorScheme } from '@/components/useColorScheme';
 import { GestureDetector, GestureHandlerRootView } from "react-native-gesture-handler";
 
@@ -52,14 +55,14 @@ function RootLayoutNav() {
 
   return (
     <GestureHandlerRootView style={{flex: 1}}>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="profile" options={{ presentation: 'modal' }} />
-          <Stack.Screen name="recipedetails/[recipe]" options={{ presentation: "modal" }} />
-          <Stack.Screen name="likedrecipes" options={{ presentation: "modal" }} />
-        </Stack>
-      </ThemeProvider>
+      <LikedRecipesContext.Provider value={[]}>
+          <Stack>
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            <Stack.Screen name="profile" options={{ presentation: 'modal' }} />
+            <Stack.Screen name="recipedetails/[recipe]" options={{ presentation: "modal" }} />
+            <Stack.Screen name="likedrecipes" options={{ presentation: "modal" }} />
+          </Stack>
+      </LikedRecipesContext.Provider>
     </GestureHandlerRootView>
 
   );

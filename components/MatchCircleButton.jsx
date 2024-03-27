@@ -3,9 +3,9 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { AntDesign } from '@expo/vector-icons';
 
 
-export default function MatchCircleButton({icon}) {
+export default function MatchCircleButton({icon, onPress}) {
   return (
-    <Pressable style={styles.circleButton}>
+    <Pressable style={styles.circleButton} onPress={onPress} >
       <AntDesign name={icon} size={24} color="black" />
     </Pressable>
   );
