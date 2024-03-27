@@ -1,10 +1,17 @@
-import { Pressable, StyleSheet } from 'react-native';
-
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+import { Pressable, StyleSheet } from 'react-native'
+import { Text, View, FlatList} from 'react-native'
 import { Link } from "expo-router"
 
+import { useRecipes } from "@/contexts/RecipesContext"
+
+import ListRecipeCard from '@/components/ListRecipeCard'
+
 export default function TabThreeScreen() {
+
+  const recipes = useRecipes()
+
+  const likedRecipes = recipes.filter(r => r.status === 2)
+
   return (
     <View style={styles.container}>
       <Link href={"likedrecipes"} asChild>
@@ -12,6 +19,13 @@ export default function TabThreeScreen() {
           <Text style={{fontSize: 18}} >Liked recipes</Text>
         </Pressable>
       </Link>
+      <FlatList
+        data={likedRecipes}
+        renderItem={({item}) => <ListRecipeCard recipe={item} />}
+        keyExtractor={item => item.id}
+        numColumns={2}
+        style={{alignSelf: "stretch"}}
+      />
     </View>
   );
 }
@@ -19,7 +33,7 @@ export default function TabThreeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center"
   },
   title: {
     fontSize: 20,
@@ -34,6 +48,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     padding: 5,
     borderColor: "gray",
-    borderRadius: 10
+    borderRadius: 10,
+    margin: 5
   },
 });

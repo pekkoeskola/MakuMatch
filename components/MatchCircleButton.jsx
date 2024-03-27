@@ -1,9 +1,16 @@
 import { View, Pressable, StyleSheet } from 'react-native';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign, MaterialCommunityIcons} from '@expo/vector-icons';
 
 
-export default function MatchCircleButton({icon, onPress}) {
+export default function MatchCircleButton({icon, iconFamily, onPress}) {
+  if(iconFamily === "MaterialCommunityIcons"){
+    return (
+      <Pressable style={styles.circleButton} onPress={onPress} >
+        <MaterialCommunityIcons name={icon} size={24} color="black" />
+      </Pressable>
+    );
+  }
+
   return (
     <Pressable style={styles.circleButton} onPress={onPress} >
       <AntDesign name={icon} size={24} color="black" />

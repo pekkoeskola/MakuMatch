@@ -3,7 +3,7 @@ import { Platform, StyleSheet, Text, View, FlatList } from 'react-native';
 
 import { StatusBar } from 'expo-status-bar';
 
-import ListRecipeCard from '@/components/ListRecipeCard'
+import ListRecipeCardLarge from '@/components/ListRecipeCardLarge'
 
 import { useRecipes } from "@/contexts/RecipesContext"
 
@@ -12,13 +12,13 @@ export default function ModalScreen() {
 
   const recipes = useRecipes()
 
-  const likedRecipes = recipes.filter(r => r.liked)
+  const likedRecipes = recipes.filter(r => r.status === 1)
 
   return(
     <View style={styles.container}>
       <FlatList
         data={likedRecipes}
-        renderItem={({item}) => <ListRecipeCard recipe={item} />}
+        renderItem={({item}) => <ListRecipeCardLarge recipe={item} />}
         keyExtractor={item => item.id}
         numColumns={1}
       />

@@ -6,14 +6,14 @@ import { Pressable } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
+  name: React.ComponentProps<typeof MaterialCommunityIcons>['name'];
   color: string;
 }) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
+  return <MaterialCommunityIcons size={28} style={{ marginBottom: -3 }} {...props} />;
 }
 
 export default function TabLayout() {
@@ -31,21 +31,21 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Match',
-          tabBarIcon: ({ color }) => <TabBarIcon name="heart" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="heart-multiple" color={color} />,
         }}
       />
       <Tabs.Screen
         name="search"
         options={{
           title: 'Search',
-          tabBarIcon: ({ color }) => <TabBarIcon name="search" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="card-search" color={color} />,
         }}
       />
       <Tabs.Screen
         name="recipebook"
         options={{
           title: 'My Recipes',
-          tabBarIcon: ({ color }) => <TabBarIcon name="book" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="notebook" color={color} />,
           headerRight: () => (
             <Link href="/profile" asChild>
               <Pressable>

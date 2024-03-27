@@ -5,13 +5,15 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect, useReducer } from 'react';
 
-import Recipes from "@/constants/Recipes"
+import { useColorScheme } from '@/components/useColorScheme';
+import { GestureDetector, GestureHandlerRootView } from "react-native-gesture-handler";
+
 
 //contexts and reducers
 import { RecipesProvider } from '@/contexts/RecipesContext';
 
-import { useColorScheme } from '@/components/useColorScheme';
-import { GestureDetector, GestureHandlerRootView } from "react-native-gesture-handler";
+import Recipes from "@/constants/Recipes"
+
 
 export {
   // Catch any errors thrown by the Layout component.

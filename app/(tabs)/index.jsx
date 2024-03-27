@@ -35,10 +35,18 @@ export default function TabOneScreen() {
     nextRecipe()
   }
 
+  const onSave = () => {
+    dispatch({
+      type: "saved",
+      id: currentRecipe.id
+    })
+    nextRecipe()
+  }
+
   return (
     <View style={[styles.container, {zIndex: -1}]}>
       <MatchRecipeCard currentRecipe={currentRecipe} nextRecipe={nextRecipe}/>
-      <MatchButtons onLike={onLike} onDislike={nextRecipe} onAdd={nextRecipe} />
+      <MatchButtons onLike={onLike} onDislike={nextRecipe} onSave={onSave} />
     </View>
   )
 }
