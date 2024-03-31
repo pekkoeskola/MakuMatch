@@ -22,7 +22,7 @@ const Recipes = [
         title: "Papupaistos",
         imagePath: require("../assets/images/papupaistos.jpg"),
         id: 2,
-        status: 0
+        status: 0,
         rating: 4,
         serves: 4,
         allergens: [laktoositon, gluteeniton, pähkinätön, kananmunaton],
