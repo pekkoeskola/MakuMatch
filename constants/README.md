@@ -20,7 +20,7 @@ Jokaisella reseptillä on seuraavat kentät:
 - serves: Number
     - annosten määrä
 - allergens : Array[String]
-    allergeenit, vaihtoehtoja tällä hetkellä laktoositon, maidoton, gluteeniton, pähkinätön, kananmunaton. Ei isoja kirjaimia.
+    - allergeenit, vaihtoehtoja tällä hetkellä laktoositon, maidoton, gluteeniton, pähkinätön, kananmunaton. Ei isoja kirjaimia.
 - diet : Array[String]
     - ruokavaliotyyppi, vaihtoehtoja tällä hetkellä vegaani, pescovegetaristi, kasvis (sekasyöjä on vain tyhjä Array). Ei isoja kirjaimia.
 - tags : Array[String]
