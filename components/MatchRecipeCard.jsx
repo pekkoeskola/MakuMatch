@@ -3,7 +3,7 @@ import {View, Text, Image, ImageBackground,StyleSheet} from "react-native"
 import { GestureDetector, Gesture } from 'react-native-gesture-handler';
 import Animated, { useAnimatedStyle, useSharedValue} from 'react-native-reanimated';
 
-const MatchRecipeCard = ({currentRecipe, nextRecipe}) => {
+const MatchRecipeCard = ({currentRecipe}) => {
 
   const translateX = useSharedValue(0);
   const translateY = useSharedValue(0);
@@ -40,12 +40,13 @@ const MatchRecipeCard = ({currentRecipe, nextRecipe}) => {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      margin: 15,
-      borderColor: "green",
-      alignSelf: "stretch",
+    },
+    imageBackground:{
+      width: "100%", 
+      height: "100%", 
+      flexDirection: "column-reverse"
     },
     image: {
-      flex: 1,
       borderRadius: 20,
     },
     title: {
@@ -56,17 +57,30 @@ const MatchRecipeCard = ({currentRecipe, nextRecipe}) => {
   })
 
   return(
-    <GestureDetector gesture={drag}>
-      <Animated.View style={[containerStyle, styles.container]}>
-        <ImageBackground source={currentRecipe.imagePath} 
-          style={{width: "100%", height: "100%", flexDirection: "column-reverse"}}
-          imageStyle={styles.image}>
-            <Text style={styles.title} >{currentRecipe.title}</Text>
-        </ImageBackground>
-      </Animated.View>
-    </GestureDetector>
+    <View style={[styles.container]}>
+      <ImageBackground source={currentRecipe.imagePath} 
+        style={styles.imageBackground}
+        imageStyle={styles.image}>
+          <Text style={styles.title} >{currentRecipe.title}</Text>
+      </ImageBackground>
+    </View>
   )
 }
+
+/**
+
+      <ImageBackground source={currentRecipe.imagePath} 
+        style={styles.imageBackground}
+        imageStyle={styles.image}>
+          <Text style={styles.title} >{currentRecipe.title}</Text>
+      </ImageBackground>
+
+      borderColor: "blue",
+      borderWidth: 3,
+      backgroundColor: "yellow",
+
+
+ */
 
 
 export default MatchRecipeCard

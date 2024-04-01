@@ -1,11 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { useState, useContext } from 'react';
+import Swiper from "react-native-deck-swiper"
 
-import Animated, { useAnimatedProps, useSharedValue} from 'react-native-reanimated'
-
-import MatchRecipeCardAnimated from '../../components/MatchRecipeCardAnimated'
 import MatchRecipeCard from "../../components/MatchRecipeCard"
-import MatchCircleButton from '@/components/MatchCircleButton'
 import MatchButtons from '@/components/MatchButtons'
 
 import Recipes from "../../constants/Recipes"
@@ -27,26 +24,44 @@ export default function TabOneScreen() {
     }
   }
 
-  const onLike = () => {
+  const onLike = (id) => {
     dispatch({
       type: "liked",
-      id: currentRecipe.id
+      id: id + 1
     })
-    nextRecipe()
   }
 
-  const onSave = () => {
+  const onSave = (id) => {
     dispatch({
       type: "saved",
-      id: currentRecipe.id
+      id: id + 1
     })
-    nextRecipe()
   }
 
   return (
-    <View style={[styles.container, {zIndex: -1}]}>
-      <MatchRecipeCard currentRecipe={currentRecipe} nextRecipe={nextRecipe}/>
-      <MatchButtons onLike={onLike} onDislike={nextRecipe} onSave={onSave} />
+    <View style={styles.container}>
+      {/*TODO adjust bottom margin automatically in response to tab bar height? right now hardcoded by eyeballing. cannot use flex layout with Swiper */}
+      <Swiper
+        cards={Recipes}
+        renderCard={(card) => {
+          return (
+            <MatchRecipeCard currentRecipe={card}/>
+          )
+        }}
+        infinite={true}
+        showSecondCard={true}
+        stackSize={2}
+        onSwipedRight={onLike}
+        onSwipedTop={onSave}
+        containerStyle={styles.swiperContainer}
+        cardStyle={styles.cardStyle}
+        cardVerticalMargin={10}
+        cardHorizontalMargin={10}
+        backgroundColor='white'
+        marginBottom={109}
+        disableBottomSwipe={true}
+        >
+      </Swiper>
     </View>
   )
 }
@@ -54,17 +69,32 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: "white"
+    flexDirection: "column",
+    backgroundColor: "white",
+    alignItems: "stretch",
+    justifyContent: "center"
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  swiperContainer: {
+    flex: 1,
+    position: "absolute",
   },
+  cardStyle:{
+    position: "absolute",
+    flex: 1,
+  }
 });
+
+/**
+
+  INFO: buttons disabled for now
+
+  <MatchButtons onLike={onLike} onDislike={nextRecipe} onSave={onSave}/>
+
+    backgroundColor: "green",
+    borderColor: "red",
+    borderWidth: 3,
+ */

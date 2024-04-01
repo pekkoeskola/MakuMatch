@@ -14,6 +14,7 @@ export default MatchButtons = ({ onLike, onDislike, onSave}) => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     flexDirection: "row",
     marginBottom: 20,
   }
