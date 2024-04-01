@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { useState, useContext } from 'react';
+import { router } from "expo-router"
 import Swiper from "react-native-deck-swiper"
 
 import MatchRecipeCard from "../../components/MatchRecipeCard"
@@ -38,6 +39,10 @@ export default function TabOneScreen() {
     })
   }
 
+  const onTap = (id) => {
+    router.push(`/recipedetails/${id+1}`)
+  }
+
   return (
     <View style={styles.container}>
       {/*TODO adjust bottom margin automatically in response to tab bar height? right now hardcoded by eyeballing. cannot use flex layout with Swiper */}
@@ -53,6 +58,7 @@ export default function TabOneScreen() {
         stackSize={2}
         onSwipedRight={onLike}
         onSwipedTop={onSave}
+        onTapCard={onTap}
         containerStyle={styles.swiperContainer}
         cardStyle={styles.cardStyle}
         cardVerticalMargin={10}
