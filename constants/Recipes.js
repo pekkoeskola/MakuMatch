@@ -89,13 +89,65 @@ const Recipes = [
         title: "Tonnikalalasagne",
         imagePath: require("../assets/images/tonnikalalasagne.jpg"),
         id: 5,
-        status: 0
+        status: 0,
+        rating: 3,
+        serves: 5,
+        allergens: ["laktoositon", "kananmunaton", "pähkinätön"],
+        diet: ["pescovegetaristi"],
+        tags: ["pasta", "terveellinen"],
+        ingredients: ["12 lasagnelevyä", "2 tlk (à 200 g/150 g) tonnikalapaloja öljyssä", "2 (150 g) sipulia", "2 valkosipulinkynttä", "1/2 rkl öljyä", 
+                      "1 tlk (390 g) chilitomaattimurskaa", "1 dl vettä", "2 tlk (200 g) laktoositonta ruokakermaa (15 %)", "1 (200 g) punainen paprika", 
+                      "1/2 dl basilikaa hienonnettuna tai 1–2 tl basilikaa", "1 tl suolaa", 
+                      "ripaus mustapippuria", "1 ps (150 g) laktoositonta emmental-mozzarellajuustoraastetta" ],
+        steps: [
+            "Valuta tonnikalat.",
+            "Hienonna kuoritut sipulit ja valkosipulinkynnet.",
+            "Kuullota sipulia ja valkosipulia öljyssä.",
+            "Lisää joukkoon tomaattimurska, vesi (huuhtaise vedellä ensin tomaattimurskapakkaus), ruokakerma, tonnikalat, hienonnettu paprika ja mausteet. Hauduta kannen alla 5–10 minuuttia.",
+            "Lisää joukkoon noin 100 g (2/3 osaa) juustoraasteesta ja sekoita.",
+            "Voitele lasagnevuoka.",
+            "Kaada vuoan pohjalle tonnikalakastiketta ja levitä päälle lasagnelevyjä. Täytä näin muutama seuraavakin kerros. Viimeisen lasagnelevykerroksen päälle tulee vielä tonnikalakastiketta. Ripottele pinnalle loppu juustoraaste.",
+            "Paista 175-asteisen uunin alatasolla noin 45 minuuttia. Anna lasagnen vetäytyä peitettynä noin 15 minuuttia ennen tarjoamista."
+            ]
     },
     {
         title: "Porkkana-linssikeitto",
         imagePath: require("../assets/images/porkkana-linssikeitto.jpg"),
         id: 6,
-        status: 0
+        status: 0,
+        rating: 4,
+        serves: 4,
+        allergens: ["laktoositon", "maidoton", "gluteeniton", "pähkinätön", "kananmunaton"],
+        diet: ["kasvis", "pescovegetaristi", "vegaani"],
+        tags: ["terveellinen", "nopea"],
+        ingredients: ["500 g porkkanoita", "1 rkl rypsiöljyä", "200g sipulia kuutioina",  "1 valkosipulinkynsi hienonnettuna", "1 tl juustokuminaa", "5 dl vettä", 
+                      "1 tlk (380 g/230 g) punaisia linssejä suolaliemessä", "1 1/2 rkl kasvisfondia", "1/2 tlk (à 400 ml) kookosmaitoa", "1/4 tl mustapippuria", "(1/2 -1 dl, vettä)"],
+        steps: [
+            "Kuori ja leikkaa pestyt porkkanat pieniksi paloiksi.",
+            "Kuullota sipulikuutioita, valkosipulia ja juustokuminaa öljyssä kattilassa. Lisää porkkanat ja kuullota vielä hetki.",
+            "Lisää vesi ja kasvisfondi. Kuumenna kiehuvaksi ja keitä kannen alla noin 15 minuuttia.",
+            "Lisää huuhdotut, valutetut linssit ja keitä vielä noin 5 minuuttia, kunnes porkkanat ovat kypsiä.",
+            "Lisää lopuksi kookosmaito ja mausta pippurilla. Soseuta keitto tehosekoittimessa sileäksi. Lisää tarvittaessa vettä, kunnes saat sopivan rakenteen.", 
+            "Voit halutessasi lusikoida keittoannosten pinnalle rapeaa valkosipulia sekä koristella korianterilla."
+            ]
+    },
+    {
+        title: "Pinaattiletut",
+        //imagePath: require("../assets/images/________.jpg"),
+        id: 7,
+        status: 0,
+        rating: 3,
+        serves: 5,
+        allergens: ["laktoositon", "pähkinätön"],
+        diet: ["kasvis", "pescovegetaristi"],
+        tags: ["terveellinen", "nopea"],
+        ingredients: ["1 ps (150 g) hienonnettua pinaattia", "1/2 l laktoositonta maitoa", "3 dl vehnäjauhoja", "2 kananmunaa", "1 tl suolaa", "1–2 tl sokeria", 
+                      "ripaus mustapippuria", "1/4 dl juoksevaa margariinia tai öljyä", "paistamiseen, juoksevaa margariinia tai öljyä", "lisäksi: puolukkahilloa tai muuta lisuketta"],
+        steps: [
+            "Sulata pinaatti. Vatkaa keskenään maito, vehnäjauhot, munat, suola, sokeri ja pippuri.", 
+            "Lisää öljy ja pinaatti. Anna taikinan turvota hetki.", 
+            "Paista taikinasta rasvassa kuumalla pannulla ohuita lettuja. Tarjoa pinaattiletut puolukkahillon ja raejuuston kanssa."
+            ]
     }
 ]
 
