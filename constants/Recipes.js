@@ -54,21 +54,36 @@ const Recipes = [
                       "400 g naudan jauhelihaa (17 %)", "1 tlk (500 g) tomaattimurskaa", "2 dl punaviiniä", "1 dl vettä", "1 tl suolaa", "1 tl oreganoa", 
                       "1/4 tl mustapippuria", "1/4 tl jauhettua muskottipähkinää", "400 g täysjyväspagettia", "Lisäksi, parmesaania"],
         steps: [
-        "Leikkaa pekoni ohuiksi suikaleiksi. Hienonna sipuli ja valkosipulinkynnet.", 
-        "Leikkaa porkkanat ja sellerit hyvin pieniksi kuutioiksi.",
-        "Levitä pekonisilppu isoon paistokasariin ja kuumenna hitaasti, jotta neste ja rasva irtoaa. Nosta lämpöä ja paista, kunnes pekoni on ruskistunut.",
-        "Lisää jauheliha ja ruskista. Lisää myös sipuli, valkosipulit ja vihannekset. Kypsennä noin 5 minuuttia.",
-        "Kaada kasariin tomaattimurska, viini ja vesi. Mausta suolalla, oreganolla, pippurilla ja muskottipähkinällä.",
-        "Hauduta miedolla lämmöllä kannen alla noin 45 minuuttia. Sekoita välillä ja lisää tarvittaessa hiukan vettä.",
-        "Keitä pasta runsaassa suolalla maustetussa vedessä pakkauksen ohjeen mukaan. Valuta pasta.",
-        "Annostele pasta lautasille. Nosta päälle kastiketta ja ripottele pinnalle parmesaaniraastetta tai -lastuja."
-        ]
+            "Leikkaa pekoni ohuiksi suikaleiksi. Hienonna sipuli ja valkosipulinkynnet.", 
+            "Leikkaa porkkanat ja sellerit hyvin pieniksi kuutioiksi.",
+            "Levitä pekonisilppu isoon paistokasariin ja kuumenna hitaasti, jotta neste ja rasva irtoaa. Nosta lämpöä ja paista, kunnes pekoni on ruskistunut.",
+            "Lisää jauheliha ja ruskista. Lisää myös sipuli, valkosipulit ja vihannekset. Kypsennä noin 5 minuuttia.",
+            "Kaada kasariin tomaattimurska, viini ja vesi. Mausta suolalla, oreganolla, pippurilla ja muskottipähkinällä.",
+            "Hauduta miedolla lämmöllä kannen alla noin 45 minuuttia. Sekoita välillä ja lisää tarvittaessa hiukan vettä.",
+            "Keitä pasta runsaassa suolalla maustetussa vedessä pakkauksen ohjeen mukaan. Valuta pasta.",
+            "Annostele pasta lautasille. Nosta päälle kastiketta ja ripottele pinnalle parmesaaniraastetta tai -lastuja."
+            ]
     },
     {
         title: "Pasta carbonara",
         imagePath: require("../assets/images/pasta_carbonara.jpg"),
         id: 4,
-        status: 0
+        status: 0,
+        rating: 3,
+        serves: 4,
+        allergens: ["laktoositon", "pähkinätön"],
+        diet: [],
+        tags: ["pasta", "nopea"],
+        ingredients: ["300 g spagettia", "1 pkt (150 g) pekonia", "2 valkosipulinkynttä", "1 prk (2 dl) laktoositonta ruokakermaa (15 %)", "2 kananmunaa", 
+                      "1 1/2 dl laktoositonta parmesaania raastettuna", "1/2 tl mustapippuria", "1/4 tl suolaa" ],
+        steps: [
+            "Keitä spagetti pakkauksen ohjeen mukaan ja valuta se.", 
+            "Suikaloi pekoni ja hienonna valkosipulinkynnet.",
+            "Ruskista pekonit pannulla. Lisää valkosipulinkynnet ja paista, kunnes ne ovat pehmenneet.",
+            "Sekoita kulhossa ruokakerma, munat, parmesaani ja mausteet.",
+            "Yhdistä pasta ja pekoniseos. Sekoita kerma-munaseos kuuman pastan joukkoon.",
+            "Tarjoa pasta carbonara heti. Lisää halutessasi annosten pinnalle vielä parmesaaniraastetta sekä vastarouhittua mustapippuria."
+            ]
     },
     {
         title: "Tonnikalalasagne",
