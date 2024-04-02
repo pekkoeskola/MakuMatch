@@ -151,16 +151,22 @@ const Recipes = [
     },
     {
         title: "Falafelpelti",
-        //imagePath: require("../assets/images/Falafelpelti.jpg"),
+        imagePath: require("../assets/images/falafelpelti.jpeg"),
         id: 8,
         status: 0,
         rating: 3,
         serves: 4,
-        allergens: [],
-        diet: [],
-        tags: [],
-        ingredients: [],
-        steps: []   
+        allergens: ["laktoositon", "maidoton", "pähkinätön", "kananmunaton", "gluteeniton"],
+        diet: ["kasvis", "pescovegetaristi", "vegaani"],
+        tags: ["terveellinen"],
+        ingredients: ["6–7 (500 g) perunaa", "4 (400 g) porkkanaa", "2 (100 g) pientä sipulia", "2 rkl rypsiöljyä", "1 tl suolaa", "1 tl kuivattua basilikaa", "1/4 tl mustapippuria", "1 ps (300 g) falafelpyöryköitä", 
+                      "1 prk (200 g) kermaviiliä tai 1 prk (150 g) kaurafraichea", "2 rkl ketsuppia", "ripaus mustapippuria"],
+        steps: [
+            "Lohko pestyt perunat. Kuori ja paloittele porkkanat sekä sipulit.", 
+            "Kääntele kasvikset kulhossa öljyssä ja mausta. Kumoa kasvislohkot leivinpaperin päälle uunipellille.", 
+            "Paista 225-asteisessa uunissa ensin 20 minuuttia. Ota pelti uunista, lisää jäiset falafelpyörykät ja jatka paistamista vielä 10-15 minuuttia.", 
+            "Sekoita kastikkeen aineet keskenään kulhossa ja tarjoa kastike vegepyörykkäpellin kanssa."
+        ]   
     }
 ]
 
