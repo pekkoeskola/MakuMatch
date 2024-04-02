@@ -148,6 +148,19 @@ const Recipes = [
             "Lisää öljy ja pinaatti. Anna taikinan turvota hetki.", 
             "Paista taikinasta rasvassa kuumalla pannulla ohuita lettuja. Tarjoa pinaattiletut puolukkahillon ja raejuuston kanssa."
             ]
+    },
+    {
+        title: "Falafelpelti",
+        //imagePath: require("../assets/images/Falafelpelti.jpg"),
+        id: 8,
+        status: 0,
+        rating: 3,
+        serves: 4,
+        allergens: [],
+        diet: [],
+        tags: [],
+        ingredients: [],
+        steps: []   
     }
 ]
 
