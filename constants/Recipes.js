@@ -133,7 +133,7 @@ const Recipes = [
     },
     {
         title: "Pinaattiletut",
-        //imagePath: require("../assets/images/________.jpg"),
+        imagePath: require("../assets/images/Pinaattiletut.jpeg"),
         id: 7,
         status: 0,
         rating: 3,
