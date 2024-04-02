@@ -191,17 +191,41 @@ const Recipes = [
                ]
     },
     {
-        //title: "Kermainen kanapasta",
-        //imagePath: require(""),
-        // id: 10,
-        // status: 0,
-        // rating: ,
-        // serves: ,
-        // allergens: [],
-        // diet: [],
-        //tags: [],
-        // ingredients: [],
-        // steps: []
+        title: "Kermainen kanapasta",
+        imagePath: require("../assets/images/kermainen_kanapasta.jpg"),
+        id: 10,
+        status: 0,
+        rating: 3,
+        serves: 2,
+        allergens: ["laktoositon", "pähkinätön"],
+        diet: [],
+        tags: ["nopea", "kana"],
+        ingredients: ["1 pkt (250 g) kanan maustamattomia fileesuikaleita", "1 rkl oliiviöljyä", "1/4 tl suolaa", "1/2 tl mustapippuria", "2 dl laktoositonta valkosipulikermaa", 
+                      "2 dl parmesaania raastettuna", "1/2 rkl sitruunanmehua", "1/2 ps (à 500 g) tagliatellea", "lisäksi parmesaania raastettuna", "1/2 dl lehtipersiljaa hienonnettuna"],
+        steps: [
+            "Ota kanat huoneenlämpöön noin 30 minuuttia ennen kypsennystä. Ruskista kanan fileesuikaleet öljyssä pannulla. Mausta suolalla ja mustapippurilla.", 
+            "Lisää joukkoon kerma, parmesaani ja sitruunanmehu. Kuumenna kiehuvaksi. Anna kastikkeen poreilla miedolla lämmöllä muutaman minuutin ajan.", 
+            "Keitä pasta pakkauksen ohjeen mukaan suolalla maustetussa vedessä.", 
+            "Ota osa pastan keitinvedestä talteen. Valuta pasta ja sekoita kastikkeen joukkoon. Lisää tarvittaessa hieman keitinvettä. Viimeistele parmesaaniraasteella ja lehtipersiljalla. Tarjoa heti."
+            ]
+    },
+    {
+        title: "Teemun kanatortillat",
+        imagePath: require("../assets/images/kanatortilla.jpg"),
+        id: 11,
+        status: 0,
+        rating: 3,
+        serves: 3,
+        allergens: ["laktoositon", "maidoton", "pähkinätön"],
+        diet: [],
+        tags: ["terveellinen", "nopea", "kana"],
+        ingredients: ["8 tortillalättyä", "1/2 kurkku", "purkillinen luumukirsikkatomaatteja", "1 punasipuli", "2 pakettia kanalastuja", 
+                     "majoneesia", "piparjuuritahnaa"],
+        steps: [
+            "Pilko kasvikset pieniksi paloiksi.",
+            "Ota tortillalätty lautaselle ja täytä se sopivalla määrällä kaikkia aineksia.",
+            "Nauti tortilla ja toista niin kauan kuin nälkää (tai aineksia) riittää."
+            ]
     }
 ]
 
