@@ -167,6 +167,41 @@ const Recipes = [
             "Paista 225-asteisessa uunissa ensin 20 minuuttia. Ota pelti uunista, lisää jäiset falafelpyörykät ja jatka paistamista vielä 10-15 minuuttia.", 
             "Sekoita kastikkeen aineet keskenään kulhossa ja tarjoa kastike vegepyörykkäpellin kanssa."
         ]   
+    },
+    {
+        title: "Tonnikalapiirakka",
+        imagePath: require("../assets/images/tonnikalapiirakka.jpeg"),
+        id: 9,
+        status: 0,
+        rating: 3,
+        serves: 4,
+        allergens: ["laktoositon", "pähkinätön"],
+        diet: ["pescovegetaristi"],
+        tags: ["terveellinen"],
+        ingredients: ["1 pohja", "1 (90 g) sipuli",  "2 valkosipulinkynttä", "1 (100 g) punainen paprika", "1 rkl rypsiöljyä", "1 tlk (200 g/150 g) tonnikalapaloja öljyssä",
+                      "1 prk (200 g) laktoositonta kermaviiliä", "2 kananmunaa", "1 dl tuoretta persiljaa hienonnettuna", "1/2 tl suolaa", "1/2 tl mustapippuria",  
+                      "1 ps (150 g) emmental-mozzarellajuustoraastetta"],
+        steps: ["Voit hankkia pohjan pakasteena tai tehdä sen itse, jolloin tarvitset: 100 g voita, 2 1/2 dl vehnäjauhoja ja 1/2 dl kylmää vettä. Nypi tällöin huoneenlämpöinen voi ja vehnäjauhot. Lisää kylmä vesi ja sekoita taikina nopeasti tasaiseksi.", 
+                "Painele taikina leivinpaperilla vuoratun piirakkavuoan (Ø 24 cm) pohjalle ja reunoille. Nosta jääkaappiin täytteen teon ajaksi.", 
+                "Hienonna kuorittu sipuli ja valkosipulinkynnet. Kuutioi pesty paprika.", 
+                "Kuumenna öljy pannulla ja kuullota kasvikset pehmeiksi, noin 5 minuuttia. Lisää valutettu tonnikala ja paista vielä hetki.", 
+                "Sekoita kulhossa kermaviili, munat, persilja, suola, pippuri ja puolet juustoraasteesta. Lisää tonnikala-kasvisseos.", 
+                "Levitä täyte piirakkapohjalle. Ripottele pinnalle loppu juustoraaste.", 
+                "Paista tonnikalapiirakkaa 200-asteisessa uunissa noin 40 minuuttia."
+               ]
+    },
+    {
+        //title: "Kermainen kanapasta",
+        //imagePath: require(""),
+        // id: 10,
+        // status: 0,
+        // rating: ,
+        // serves: ,
+        // allergens: [],
+        // diet: [],
+        //tags: [],
+        // ingredients: [],
+        // steps: []
     }
 ]
 
