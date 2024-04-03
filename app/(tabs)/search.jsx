@@ -1,6 +1,5 @@
 import { StyleSheet, FlatList, Text, View } from 'react-native';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
 import ListRecipeCard from '../../components/ListRecipeCard';
 
 import Recipes from "../../constants/Recipes"

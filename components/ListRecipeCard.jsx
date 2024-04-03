@@ -21,11 +21,10 @@ const ListRecipeCard = ({ recipe }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, 
+    flex: 1/2, 
     margin: 10,
     borderColor: "green",
-    width: "97%",
-    alignSelf: "center",
+    alignSelf: "stretch",
   },
   image: {
     flex: 1,
