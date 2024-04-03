@@ -12,7 +12,7 @@ const ListRecipeCard = ({ recipe }) => {
           source={imagePath}
           style={{width: "100%", height: 100, flexDirection: "column-reverse"}}
           imageStyle={styles.image}>
-            <Text style={styles.title}>{recipe.title}</Text>
+              <Text style={styles.title}>{recipe.title}</Text>
         </ImageBackground>
       </Pressable>
     </Link>
@@ -25,6 +25,8 @@ const styles = StyleSheet.create({
     margin: 10,
     borderColor: "green",
     alignSelf: "stretch",
+    borderRadius: 20,
+
   },
   image: {
     flex: 1,
@@ -34,7 +36,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "white",
     top: 5,
-    left: 15,
+    marginHorizontal: 10,
   },
 })
 

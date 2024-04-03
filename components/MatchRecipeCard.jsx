@@ -40,6 +40,7 @@ const MatchRecipeCard = ({currentRecipe}) => {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
+      borderRadius: 20,
     },
     imageBackground:{
       width: "100%", 
@@ -53,6 +54,7 @@ const MatchRecipeCard = ({currentRecipe}) => {
       fontSize: 30,
       top: 12,
       left: 15,
+      color: "white",
     },
   })
 

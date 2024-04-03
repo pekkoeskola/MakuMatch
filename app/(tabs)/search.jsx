@@ -47,6 +47,7 @@ export default function TabTwoScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "white"
   },
   title: {
     fontSize: 20,
@@ -59,7 +60,8 @@ const styles = StyleSheet.create({
     height: 50,
     paddingHorizontal: 10,
     fontSize: 20,
-    borderRadius: 15
+    borderRadius: 15,
+    elevation: 4
   },
   separator: {
     marginVertical: 30,

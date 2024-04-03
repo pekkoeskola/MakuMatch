@@ -16,7 +16,7 @@ export default function TabThreeScreen() {
     <View style={styles.container}>
       <Link href={"likedrecipes"} asChild>
         <Pressable style={styles.button}>
-          <Text style={{fontSize: 18}} >Liked Recipes</Text>
+          <Text style={{fontSize: 18}} >Tykätyt reseptit</Text>
         </Pressable>
       </Link>
       <FlatList
@@ -33,7 +33,8 @@ export default function TabThreeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center"
+    alignItems: "center",
+    backgroundColor: "white"
   },
   title: {
     fontSize: 20,
@@ -50,6 +51,7 @@ const styles = StyleSheet.create({
     borderColor: "gray",
     borderRadius: 10,
     margin: 10,
-    backgroundColor: "white"
+    backgroundColor: "white",
+    elevation: 4
   },
 });
