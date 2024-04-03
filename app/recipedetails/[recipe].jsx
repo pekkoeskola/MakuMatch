@@ -1,7 +1,7 @@
 import React from "react"
 
 import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet, Image, View, Text } from 'react-native';
+import { Platform, StyleSheet, Image, View, Text, ScrollView} from 'react-native';
 
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 
@@ -23,32 +23,54 @@ export default function RecipeDetailsScreen() {
 
   return (
     <View style={styles.container}>
-      <Image source={imagePath} style={styles.image}/>
-      <Text style={styles.title}>{recipeDetails.title}</Text>
+      <ScrollView contentContainerStyle={styles.scrollContentContainer}>
+        <Image source={imagePath} style={styles.image}/>
+        <Text style={styles.subtitle} >Ainekset</Text>
+        {recipeDetails.ingredients.map((ingredient, index) => <Text key={index} style={styles.ingredients} >{ingredient}</Text>)}
+        <Text style={styles.subtitle} >Vaiheet</Text>
+        {recipeDetails.steps.map((step, index)=> <Text key={index} style={styles.steps} >{`${index + 1}. ${step}`}</Text>)}
+      </ScrollView>
 
       {/* Use a light status bar on iOS to account for the black space above the modal */}
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
     </View>
+
   );
 }
+
+const horizontalMargin = 10
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  scrollContentContainer: {
   },
   title: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 35,
+    fontWeight: '300',
+  },
+  subtitle: {
+    fontSize: 22,
+    fontWeight: '300',
+    marginHorizontal: horizontalMargin, 
+    marginVertical: 10
+  },
+  ingredients: {
+    fontSize: 18,
+    marginHorizontal: horizontalMargin,
+  },
+  steps: {
+    fontSize: 18,
+    marginHorizontal: horizontalMargin,
+  },
+  image: {
+    width: "100%",
+    height: 300
   },
   separator: {
     marginVertical: 30,
     height: 1,
     width: '80%',
-  },
-  image: {
-    width: "100%",
-    height: 200
   },
 });
