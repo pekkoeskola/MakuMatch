@@ -45,10 +45,11 @@ const styles = StyleSheet.create({
     width: '80%',
   },
   button: {
-    borderWidth: 2,
-    padding: 5,
+    borderWidth: 0,
+    padding: 8,
     borderColor: "gray",
     borderRadius: 10,
-    margin: 5
+    margin: 10,
+    backgroundColor: "white"
   },
 });
