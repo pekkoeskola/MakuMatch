@@ -45,7 +45,7 @@ export default function TabOneScreen() {
 
   return (
     <View style={styles.container}>
-      {/*TODO adjust bottom margin automatically in response to tab bar height? right now hardcoded by eyeballing. cannot use flex layout with Swiper */}
+      {/*TODO adjust bottom margin automatically in response to tab bar height? right now hardcoded by eyeballing, feels a bit hacky. cannot use flex layout with Swiper */}
       <Swiper
         cards={Recipes}
         renderCard={(card) => {

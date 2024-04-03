@@ -16,7 +16,7 @@ export default function TabThreeScreen() {
     <View style={styles.container}>
       <Link href={"likedrecipes"} asChild>
         <Pressable style={styles.button}>
-          <Text style={{fontSize: 18}} >Liked recipes</Text>
+          <Text style={{fontSize: 18}} >Liked Recipes</Text>
         </Pressable>
       </Link>
       <FlatList
