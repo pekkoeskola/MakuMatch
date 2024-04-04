@@ -226,6 +226,25 @@ const Recipes = [
             "Ota tortillalätty lautaselle ja täytä se sopivalla määrällä kaikkia aineksia.",
             "Nauti tortilla ja toista niin kauan kuin nälkää (tai aineksia) riittää."
             ]
+    },
+    {
+        title: "Kreikkalaiset lämppärit",
+        imagePath: require("../assets/images/kreikkalaiset_lampparit.jpg"),
+        id: 12,
+        status: 0,
+        rating: 3,
+        serves: 4,
+        allergens: ["kananmunaton"],
+        diet: ["kasvis"],
+        tags: ["terveellinen", "nopea"],
+        ingredients: ["4 tomaattia", "1 tl ekstra-neitsytoliiviöljyä", "1 tl sitruunankuorta raastettuna", "1 tl sitruunanmehua", "1/4 tl suolaa",
+                      "1/4 tl mustapippuria", "2 dl (120 g) kreikkalaisia kalamataoliiveja", "1 valkosipulinkynsi", "8 viipaletta täysjyväpaahtoleipää",
+                      "1/2 pkt (à 200 g) fetajuustoa", "1/2 ruukkua persiljaa hienonnettuna"],
+        steps: [
+            "Pese ja kuutioi tomaatit. Mausta tomaattikuutiot oliiviöljyllä, sitruunankuorella, -mehulla ja pippurilla. Hienonna oliivit sekä valkosipuli ja sekoita keskenään. Murenna feta pieniksi paloiksi.",
+            "Asettele leipäviipaleet leivinpaperin päälle uunipellille. Levitä oliivi-valkosipuliseos leiville ja lisää päälle tomaattia ja fetamurua.",
+            "Kypsennä leivät 225-asteisen uunin keskitasolla 10–12 minuuttia, kunnes juusto on saanut väriä. Viimeistele leivät persiljalla."
+            ]
     }
 ]
 
