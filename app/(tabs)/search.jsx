@@ -18,7 +18,7 @@ export default function TabTwoScreen() {
 
   const filterRecipes = (searchTerm) => {
     if(searchTerm !== ""){
-      setShownRecipes(Recipes.filter(r => r.title.toLowerCase() === searchTerm.toLowerCase()))
+      setShownRecipes(Recipes.filter(r => r.title.toLowerCase().includes(searchTerm.toLowerCase())))
     }
     else{
       setShownRecipes(Recipes)
@@ -60,7 +60,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     fontSize: 20,
     borderRadius: 15,
-    elevation: 4
+    elevation: 4,
+    shadowRadius: 3,
+    shadowColor: "black",
+    shadowOffset: {width: 0, height: 0},
+    shadowOpacity: 0.2
   },
   separator: {
     marginVertical: 30,

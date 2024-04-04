@@ -52,6 +52,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     margin: 10,
     backgroundColor: "white",
-    elevation: 4
+    elevation: 4,
+    shadowRadius: 3,
+    shadowColor: "black",
+    shadowOffset: {width: 0, height: 0},
+    shadowOpacity: 0.2
   },
 });
