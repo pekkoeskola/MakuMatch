@@ -1,7 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, StatusBar, Platform} from 'react-native';
 import { useState, useContext } from 'react';
 import { router } from "expo-router"
+import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
+import { useHeaderHeight } from '@react-navigation/elements';
 import Swiper from "react-native-deck-swiper"
+
 
 import MatchRecipeCard from "../../components/MatchRecipeCard"
 import MatchButtons from '@/components/MatchButtons'
@@ -14,6 +17,10 @@ export default function TabOneScreen() {
 
   const [currentRecipe, setCurrentRecipe] = useState(Recipes[0])
 
+  const tabBarHeight = useBottomTabBarHeight()
+  const headerHeight = useHeaderHeight();
+  const statusBarHeight = Platform.OS === "ios" ? 0 : StatusBar.currentHeight
+
   const dispatch = useRecipesDispatch()
 
   const nextRecipe = ()  => {
@@ -24,6 +31,10 @@ export default function TabOneScreen() {
       setCurrentRecipe(Recipes[currentRecipe.id])
     }
   }
+
+  //console.log(tabBarHeight)
+  //console.log(Dimensions.get("window"))
+  //console.log(Dimensions.get("screen"))
 
   const onLike = (id) => {
     dispatch({
@@ -45,7 +56,7 @@ export default function TabOneScreen() {
 
   return (
     <View style={styles.container}>
-      {/*TODO adjust bottom margin automatically in response to tab bar height? right now hardcoded by eyeballing, feels a bit hacky. cannot use flex layout with Swiper */}
+      {/*FIXED? adjust bottom margin automatically in response to tab bar height? right now hardcoded by eyeballing, feels a bit hacky. cannot use flex layout with Swiper */}
       <Swiper
         cards={Recipes}
         renderCard={(card) => {
@@ -59,13 +70,12 @@ export default function TabOneScreen() {
         onSwipedRight={onLike}
         onSwipedTop={onSave}
         onTapCard={onTap}
-        containerStyle={styles.swiperContainer}
-        cardStyle={styles.cardStyle}
+        backgroundColor='blue'
+        disableBottomSwipe={true}
         cardVerticalMargin={10}
         cardHorizontalMargin={10}
-        backgroundColor='white'
-        marginBottom={109}
-        disableBottomSwipe={true}
+        containerStyle={styles.swiperContainer}
+        marginBottom={tabBarHeight + headerHeight - statusBarHeight}
         >
       </Swiper>
     </View>
@@ -74,23 +84,18 @@ export default function TabOneScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: "column",
-    backgroundColor: "white",
-    alignItems: "stretch",
-    justifyContent: "center"
+    backgroundColor: "red",
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
   },
   swiperContainer: {
-    flex: 1,
     position: "absolute",
+    flex: 1,
   },
   cardStyle:{
     position: "absolute",
-    flex: 1,
   }
 });
 
