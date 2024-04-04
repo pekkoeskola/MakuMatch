@@ -13,7 +13,6 @@ export default function TabTwoScreen() {
 
   const onSearchChange = (text) => {
     setSearch(text)
-    console.log(text)
     filterRecipes(text)
   }
 
