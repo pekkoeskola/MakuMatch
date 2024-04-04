@@ -15,6 +15,59 @@ import { useRecipesDispatch } from '@/contexts/RecipesContext'
 
 export default function TabOneScreen() {
 
+  //TODO: maybe move these into a separate file, customise styles further
+  const overlayLabels = {
+    left: {
+    title: 'Ei',
+      style: {
+        label: {
+          borderColor: 'red',
+          color: 'red',
+          borderWidth: 5
+        },
+        wrapper: {
+          flexDirection: 'column',
+          alignItems: 'flex-end',
+          justifyContent: 'flex-start',
+          marginTop: 30,
+          marginLeft: -30
+        }
+      }
+    },
+    right: {
+    title: 'Tykkää',
+      style: {
+        label: {
+          borderColor: 'green',
+          color: 'green',
+          borderWidth: 5
+        },
+        wrapper: {
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          justifyContent: 'flex-start',
+          marginTop: 30,
+          marginLeft: 30
+        }
+      }
+    },
+    top: {
+    title: 'Tallenna',
+      style: {
+        label: {
+          borderColor: 'purple',
+          color: 'purple',
+          borderWidth: 5
+        },
+        wrapper: {
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }
+      }
+    }
+  }
+
   const [currentRecipe, setCurrentRecipe] = useState(Recipes[0])
 
   const tabBarHeight = useBottomTabBarHeight()
@@ -70,6 +123,7 @@ export default function TabOneScreen() {
         onSwipedRight={onLike}
         onSwipedTop={onSave}
         onTapCard={onTap}
+        overlayLabels={overlayLabels}
         backgroundColor='blue'
         disableBottomSwipe={true}
         cardVerticalMargin={10}
