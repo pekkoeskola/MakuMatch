@@ -6,6 +6,7 @@ import { Platform, StyleSheet, Image, View, Text, ScrollView} from 'react-native
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 
 import Stars from "@/components/Stars"
+import Duration from "@/components/Duration"
 
 import Recipes from "../../constants/Recipes"
 
@@ -28,6 +29,7 @@ export default function RecipeDetailsScreen() {
       <ScrollView contentContainerStyle={styles.scrollContentContainer}>
         <Image source={imagePath} style={styles.image}/>
         <Stars outOfFive={recipeDetails.rating} style={{position: "absolute", flexDirection: "row", marginTop: 260, marginLeft: 5}} />
+        <Duration duration={recipeDetails.duration} style={styles.duration} />
         <Text style={styles.subtitle} >Ainekset</Text>
         {recipeDetails.ingredients.map((ingredient, index) => <Text key={index} style={styles.ingredients} >{ingredient}</Text>)}
         <Text style={styles.subtitle} >Vaiheet</Text>
@@ -70,6 +72,11 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: 300
+  },
+  duration: {
+    fontSize: 18,
+    marginTop: 5,
+    marginLeft: horizontalMargin
   },
   separator: {
     marginVertical: 30,

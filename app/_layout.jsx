@@ -57,9 +57,9 @@ function RootLayoutNav() {
       <RecipesProvider>
         <Stack>
             <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-            <Stack.Screen name="profile" options={{ presentation: 'modal' }} />
+            <Stack.Screen name="profile" options={{ presentation: 'modal', title: "Profiili" }} />
             <Stack.Screen name="recipedetails/[recipe]" options={{ presentation: "modal" }} />
-            <Stack.Screen name="likedrecipes" options={{ presentation: "modal" }} />
+            <Stack.Screen name="likedrecipes" options={{ presentation: "modal", title: "Tykätyt reseptit"}} />
           </Stack>
       </RecipesProvider>
     </GestureHandlerRootView>
