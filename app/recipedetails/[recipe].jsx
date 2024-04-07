@@ -32,7 +32,7 @@ export default function RecipeDetailsScreen() {
         <Duration duration={recipeDetails.duration} style={styles.duration} />
         <Text style={styles.subtitle} >Ainekset</Text>
         {recipeDetails.ingredients.map((ingredient, index) => <Text key={index} style={styles.ingredients} >{ingredient}</Text>)}
-        <Text style={styles.subtitle} >Vaiheet</Text>
+        <Text style={styles.subtitle} >Ohjeet</Text>
         {recipeDetails.steps.map((step, index)=> <Text key={index} style={styles.steps} >{`${index + 1}. ${step}`}</Text>)}
       </ScrollView>
 

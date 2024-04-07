@@ -22,7 +22,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: "black",
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
@@ -37,14 +37,14 @@ export default function TabLayout() {
       <Tabs.Screen
         name="search"
         options={{
-          title: 'Search',
+          title: 'Etsi',
           tabBarIcon: ({ color }) => <TabBarIcon name="card-search" color={color} />,
         }}
       />
       <Tabs.Screen
         name="recipebook"
         options={{
-          title: 'My Recipes',
+          title: 'Omat reseptit',
           tabBarIcon: ({ color }) => <TabBarIcon name="notebook" color={color} />,
           headerRight: () => (
             <Link href="/profile" asChild>

@@ -5,7 +5,6 @@ import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { useHeaderHeight } from '@react-navigation/elements';
 import Swiper from "react-native-deck-swiper"
 
-
 import MatchRecipeCard from "../../components/MatchRecipeCard"
 import MatchButtons from '@/components/MatchButtons'
 
@@ -124,7 +123,7 @@ export default function TabOneScreen() {
         onSwipedTop={onSave}
         onTapCard={onTap}
         overlayLabels={overlayLabels}
-        backgroundColor='blue'
+        backgroundColor="white"
         disableBottomSwipe={true}
         cardVerticalMargin={10}
         cardHorizontalMargin={10}
@@ -138,7 +137,9 @@ export default function TabOneScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "red",
+    flex: 1,
+    backgroundColor: "white",
+    alignSelf: "stretch"
   },
   title: {
     fontSize: 20,
@@ -147,6 +148,7 @@ const styles = StyleSheet.create({
   swiperContainer: {
     position: "absolute",
     flex: 1,
+    backgroundColor: "white",
   },
   cardStyle:{
     position: "absolute",
