@@ -5,6 +5,8 @@ import { Platform, StyleSheet, Image, View, Text, ScrollView} from 'react-native
 
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 
+import Stars from "@/components/Stars"
+
 import Recipes from "../../constants/Recipes"
 
 export default function RecipeDetailsScreen() {
@@ -25,6 +27,7 @@ export default function RecipeDetailsScreen() {
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContentContainer}>
         <Image source={imagePath} style={styles.image}/>
+        <Stars outOfFive={recipeDetails.rating} style={{position: "absolute", flexDirection: "row", marginTop: 260, marginLeft: 5}} />
         <Text style={styles.subtitle} >Ainekset</Text>
         {recipeDetails.ingredients.map((ingredient, index) => <Text key={index} style={styles.ingredients} >{ingredient}</Text>)}
         <Text style={styles.subtitle} >Vaiheet</Text>
