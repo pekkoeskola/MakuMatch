@@ -17,7 +17,7 @@ export default function TabOneScreen() {
   //TODO: maybe move these into a separate file, customise styles further
   const overlayLabels = {
     left: {
-    title: 'Ei',
+    title: 'Hylkää',
       style: {
         label: {
           borderColor: 'red',

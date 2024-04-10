@@ -21,7 +21,7 @@ const Recipes = [
     },
     {
         title: "Papupaistos",
-        imagePath: require("../assets/images/papupaistos.jpg"),
+        imagePath: require("../assets/images/Papupaistos.jpg"),
         id: 2,
         status: 0,
         rating: 4,
