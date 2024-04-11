@@ -21,7 +21,7 @@ const Recipes = [
     },
     {
         title: "Papupaistos",
-        imagePath: require("../assets/images/Papupaistos.jpg"),
+        imagePath: require("../assets/images/papupaistos.jpg"),
         id: 2,
         status: 0,
         rating: 4,
@@ -256,6 +256,40 @@ const Recipes = [
             "Pese ja kuutioi tomaatit. Mausta tomaattikuutiot oliiviöljyllä, sitruunankuorella, -mehulla ja pippurilla. Hienonna oliivit sekä valkosipuli ja sekoita keskenään. Murenna feta pieniksi paloiksi.",
             "Asettele leipäviipaleet leivinpaperin päälle uunipellille. Levitä oliivi-valkosipuliseos leiville ja lisää päälle tomaattia ja fetamurua.",
             "Kypsennä leivät 225-asteisen uunin keskitasolla 10–12 minuuttia, kunnes juusto on saanut väriä. Viimeistele leivät persiljalla."
+            ]
+    },
+    {
+        title: "Mokkapalat",
+        imagePath: require("../assets/images/mokkapalat.jpg"),
+        id: 13,
+        status: 0,
+        rating: 5,
+        serves: 12,
+        duration: 50,
+        allergens: ["kananmunaton", "laktoositon", "maidoton"],
+        diet: ["vegaaninen"],
+        tags: [],
+        ingredients: ["7 ½ dl vehnäjauhoja",
+            "4,5 dl sokeria",
+            "1 dl kaakaojauhetta",
+            "1 rkl vaniljasokeria",
+            "1 rkl leivinjauhetta",
+            "1 tl suolaa",
+            "4 dl kauramaitoa",
+            "1,5 dl rypsiöljyä",
+            "1 dl keitettyä vahvaa kahvia jäähdytettynä",
+            "100 g vegaanista margariinia",
+            "1 dl keitettyä vahvaa kahvia",
+            "1 dl kaakaojauhetta",
+            "noin 5-6 dl tomusokeria",
+            "vegaanisia strösseleitä (esim. Dr. Oetker)",
+        ],
+        steps: [
+            "Keitä kahvi valmiiksi. Laita uuni kuumenemaan 175°C.",
+            "Sekoita suuressa kulhossa yhteen vehnäjauhot ja sokeri. Sihtaa joukkoon kaakaojauhe ja lisää vaniljasokeri, leivinjauhe ja suola. Sekoita tasaiseksi.",
+            "Yhdistä toisessa kulhossa kauramaito, rypsiöljy ja kahvi. Tee kuivien aineiden keskelle kolo ja kaada neste sinne. Kääntele kuivat aineet varovasti sekaisin nesteen kanssa esimerkiksi nuolijan avulla.",
+            "Levitä taikina uunipellille leivinpaperin päälle. Paista uunin keskitasolla noin 25 minuuttia tai kunnes kokeilutikkuun ei enää tartu taikinaa.",
+            "Kun mokkapalojen pohja on hieman jäähtynyt, valmista kuorrute. Kiehauta margariini ja kahvi kattilassa. Anna jäähtyä pari minuuttia ja sihtaa sitten joukkoon kaakaojauhe ja lisää tomusokeri. Sekoita tasaiseksi vispilällä ja levitä pohjan päälle. Kuorrute valuu, joten levitä se niin, että leivonnainen on vielä uunipellillä. Ripottele pinnalle strösseleitä, anna kuorrutteen jähmettyä ja leikkaa sitten leivonnainen paloiksi."
             ]
     }
 ]
