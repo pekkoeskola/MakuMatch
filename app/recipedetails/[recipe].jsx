@@ -1,24 +1,47 @@
-import React from "react"
+import React, { useState } from "react"
 
 import { StatusBar } from 'expo-status-bar';
 import { Platform, StyleSheet, Image, View, Text, ScrollView} from 'react-native';
 
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 
+import { useRecipes } from '@/contexts/RecipesContext'
+import { useRecipesDispatch } from '@/contexts/RecipesContext'
+
 import Stars from "@/components/Stars"
+import AddRemoveButton from "../../components/AddRemoveButton";
 import Duration from "@/components/Duration"
 
-import Recipes from "../../constants/Recipes"
 
 export default function RecipeDetailsScreen() {
 
   const {recipe} = useLocalSearchParams()
-
   const navigation = useNavigation();
 
-  const recipeDetails = Recipes.find(r => r.id === Number(recipe))
+  const recipes = useRecipes()
+  const dispatch = useRecipesDispatch()
 
-  const imagePath = recipeDetails.imagePath
+  const recipeDetails = recipes.find(r => r.id === Number(recipe))
+
+  const [buttonState, setButtonState] = useState(recipeDetails.status)
+
+
+  const onAddRemoveButtonPress = () => {
+    if(buttonState === 2){
+      setButtonState(1)
+      dispatch({
+        type: "removed",
+        id: recipeDetails.id
+      })
+    }
+    else{
+      setButtonState(2)
+      dispatch({
+        type: "saved",
+        id: recipeDetails.id
+      })
+    }
+  }
 
   React.useEffect(() => {
     navigation.setOptions({ title: recipeDetails.title });
@@ -27,8 +50,9 @@ export default function RecipeDetailsScreen() {
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContentContainer}>
-        <Image source={imagePath} style={styles.image}/>
-        <Stars outOfFive={recipeDetails.rating} style={{position: "absolute", flexDirection: "row", marginTop: 260, marginLeft: 5}} />
+        <Image source={recipeDetails.imagePath} style={styles.image}/>
+        <Stars outOfFive={recipeDetails.rating} style={{position: "absolute", flexDirection: "row", marginTop: 260, marginLeft: 8}} />
+        <AddRemoveButton style={{position: "absolute", alignSelf: "flex-end",  marginTop: 260, right: 8,}} state={buttonState} onPress={onAddRemoveButtonPress}/>
         <Duration duration={recipeDetails.duration} style={styles.duration} />
         <Text style={styles.subtitle} >Ainekset</Text>
         {recipeDetails.ingredients.map((ingredient, index) => <Text key={index} style={styles.ingredients} >{ingredient}</Text>)}

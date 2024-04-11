@@ -26,5 +26,18 @@ export default function recipesReducer(recipes, action) {
         }
       })
     }
+    case "removed":{
+      return recipes.map(r => {
+        if(r.id === action.id){
+          return {
+            ...r,
+            status: 0
+          }
+        }
+        else{
+          return r
+        }
+      })
+    }
   }
 }
